@@ -36,7 +36,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
                 fragment = new Location();
                 break;
             case 1:
-                fragment = new Tab2();
+                fragment = new Fragment();
                 break;
             case 2:
                 fragment = new Tab3();
