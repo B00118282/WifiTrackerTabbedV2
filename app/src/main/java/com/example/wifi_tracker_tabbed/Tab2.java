@@ -1,9 +1,12 @@
 package com.example.wifi_tracker_tabbed;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.net.NetworkInterface;
@@ -11,45 +14,54 @@ import java.net.SocketException;
 import java.util.Collections;
 import java.util.List;
 
-public class Tab2 extends AppCompatActivity {
+public class Tab2 extends Fragment {
 
-    private TextView textView;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        textView = findViewById(R.id.textView);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_tab2, container, false);
     }
 
-    public void buttonClick(View view){
+public class MACAddress extends AppCompatActivity {
 
-        try {
-            List<NetworkInterface> networkInterfaceList = Collections.list(NetworkInterface.getNetworkInterfaces());
+        private TextView textView;
 
-            String stringMac = "";
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.fragment_tab2);
 
-            for (NetworkInterface networkInterface:networkInterfaceList){
-                if (networkInterface.getName().equalsIgnoreCase("wlan0")){
-                    for (int i=0; i<networkInterface.getHardwareAddress().length;i++){
-                        String stringMacByte = Integer.toHexString(networkInterface.getHardwareAddress()[i] & 0xFF);
+            textView = findViewById(R.id.textView);
+        }
 
-                        if (stringMacByte.length() == 1){
-                            stringMacByte = "0" + stringMacByte;
+        public void buttonClick(View view) {
+
+            try {
+                List<NetworkInterface> networkInterfaceList = Collections.list(NetworkInterface.getNetworkInterfaces());
+
+                String stringMac = "";
+
+                for (NetworkInterface networkInterface : networkInterfaceList) {
+                    if (networkInterface.getName().equalsIgnoreCase("wlan0")) {
+                        for (int i = 0; i < networkInterface.getHardwareAddress().length; i++) {
+                            String stringMacByte = Integer.toHexString(networkInterface.getHardwareAddress()[i] & 0xFF);
+
+                            if (stringMacByte.length() == 1) {
+                                stringMacByte = "0" + stringMacByte;
+                            }
+
+                            stringMac = stringMac + stringMacByte.toUpperCase() + ":";
                         }
-
-                        stringMac = stringMac + stringMacByte.toUpperCase() + ":";
+                        break;
                     }
-                    break;
                 }
+
+                textView.setText(stringMac.substring(0, stringMac.length() - 1));
+
+
+            } catch (SocketException e) {
+                e.printStackTrace();
             }
-
-            textView.setText(stringMac.substring(0,stringMac.length()-1));
-
-
-        } catch (SocketException e) {
-            e.printStackTrace();
         }
     }
 }
