@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".Tab2">
+    tools:context=".MACFinder">
 
   <Button
       android:id="@+id/idBtn"

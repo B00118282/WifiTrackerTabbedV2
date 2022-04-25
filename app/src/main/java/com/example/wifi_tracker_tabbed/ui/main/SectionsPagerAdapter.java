@@ -10,7 +10,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.example.wifi_tracker_tabbed.Location;
 import com.example.wifi_tracker_tabbed.R;
-import com.example.wifi_tracker_tabbed.Tab2;
+import com.example.wifi_tracker_tabbed.MACFinder;
 import com.example.wifi_tracker_tabbed.Tab3;
 
 /**
@@ -36,7 +36,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
                 fragment = new Location();
                 break;
             case 1:
-                fragment = new Tab2();
+                fragment = new MACFinder();
                 break;
             case 2:
                 fragment = new Tab3();
