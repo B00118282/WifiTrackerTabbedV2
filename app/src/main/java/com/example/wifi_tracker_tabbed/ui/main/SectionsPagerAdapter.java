@@ -8,10 +8,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.example.wifi_tracker_tabbed.Location;
 import com.example.wifi_tracker_tabbed.R;
-import com.example.wifi_tracker_tabbed.MACFinder;
-import com.example.wifi_tracker_tabbed.Tab3;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
@@ -20,7 +17,7 @@ import com.example.wifi_tracker_tabbed.Tab3;
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @StringRes
-    private static final int[] TAB_TITLES = new int[]{R.string.tab_text_1, R.string.tab_text_2, R.string.tab_text_3};
+    private static final int[] TAB_TITLES = new int[]{R.string.tab_text_1, R.string.tab_text_2};
     private final Context mContext;
 
     public SectionsPagerAdapter(Context context, FragmentManager fm) {
@@ -36,10 +33,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
                 fragment = new Location();
                 break;
             case 1:
-                fragment = new MACFinder();
-                break;
-            case 2:
-                fragment = new Tab3();
+                fragment = new Tab2();
                 break;
         }
         return fragment;
@@ -53,7 +47,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        // Show 3 total pages.
-        return 3;
+        // Show 2 total pages.
+        return 2;
     }
 }

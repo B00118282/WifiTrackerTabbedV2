@@ -1,4 +1,4 @@
-package com.example.wifi_tracker_tabbed;
+package com.example.wifi_tracker_tabbed.ui.main;
 
 import android.os.Bundle;
 
@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Switch;
 import android.widget.TextView;
+
+import com.example.wifi_tracker_tabbed.R;
 
 public class Location extends Fragment {
 

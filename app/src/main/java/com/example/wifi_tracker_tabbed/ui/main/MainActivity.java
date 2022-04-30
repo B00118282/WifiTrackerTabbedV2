@@ -1,4 +1,4 @@
-package com.example.wifi_tracker_tabbed;
+package com.example.wifi_tracker_tabbed.ui.main;
 
 import android.os.Bundle;
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Location$LocationApp">
+    tools:context=".ui.main.Location$LocationApp">
 
     <TextView
         android:id="@+id/tv_labellat"
@@ -181,15 +181,5 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_address"
         tools:layout_editor_absoluteX="1dp"
         tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="128dp"
-        android:layout_marginTop="560dp"
-        android:text="@string/get_mac_address"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
