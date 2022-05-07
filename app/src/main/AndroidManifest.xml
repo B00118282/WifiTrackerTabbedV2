@@ -3,14 +3,13 @@
     package="com.example.wifi_tracker_tabbed">
 
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.INTERNET" />
 
-
-    <uses-permission android:name="android.permission.LOCAL_MAC_ADDRESS" />
 
     <application
         android:allowBackup="true"
@@ -23,7 +22,6 @@
 
             android:name=".ui.main.MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.Wifi_Tracker_Tabbed.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
